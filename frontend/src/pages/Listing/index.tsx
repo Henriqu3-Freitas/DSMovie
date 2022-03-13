@@ -23,7 +23,7 @@ function Listing() {
         empty: true
     });
 
-    //use effect
+    //use effect 
     useEffect(() => {
         axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)//sort idText, title..
         .then(response => {
