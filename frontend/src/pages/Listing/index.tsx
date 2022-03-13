@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { BASE_URL } from "utils/requests";
 import { MoviePage } from "types/movie";
-import { idText } from "typescript";
+
 
 function Listing() {
 
@@ -35,10 +35,13 @@ function Listing() {
     }, [pageNumber]);
 
 
+    const handlePageChange = (newPageNumber : number) =>{
+        setPageNumber(newPageNumber);
+    }
 
     return (
         <>
-            <Pagination />
+            <Pagination page={page} onChange={handlePageChange} />
 
             <div className="container">
                 <div className="row">
